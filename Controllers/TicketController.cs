@@ -7,6 +7,13 @@ using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
+
+/*
+    Swagger urls
+    https://localhost:44316/swagger/v1/swagger.json
+    https://localhost:44316/swagger/index.html
+ */
+
 namespace CoreWebAPI.Controllers
 {
     [Produces("application/json")]

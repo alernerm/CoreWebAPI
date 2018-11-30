@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace CoreWebAPI
 {
@@ -28,6 +29,9 @@ namespace CoreWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSwaggerGen(
+                c=>c.SwaggerDoc("v1", new Info{Title = "Concert API", Version = "v1"})
+                );
 
             services.AddDbContext<TicketContext>(options => options.UseInMemoryDatabase("TicketList"));
 
@@ -46,6 +50,12 @@ namespace CoreWebAPI
             }
 
             app.UseHttpsRedirection();
+
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ticket API v1")
+            );
             app.UseMvc();
         }
     }
