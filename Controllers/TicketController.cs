@@ -29,6 +29,15 @@ namespace CoreWebAPI.Controllers
             if (!_context.TicketItems.Any())
             {
                 _context.TicketItems.Add(new TicketItem {Concert = "AC/DC"});
+                _context.TicketItems.Add(new TicketItem { Concert = "Metallica" });
+                _context.TicketItems.Add(new TicketItem { Concert = "Led Zepplin" });
+                _context.TicketItems.Add(new TicketItem { Concert = "Aerosmith" });
+                _context.TicketItems.Add(new TicketItem { Concert = "Scorpions" });
+                _context.TicketItems.Add(new TicketItem { Concert = "Iron Maden" });
+                _context.TicketItems.Add(new TicketItem { Concert = "Guns 'N Roses" });
+                _context.TicketItems.Add(new TicketItem { Concert = "Bon Jovi" });
+                _context.TicketItems.Add(new TicketItem { Concert = "Kiss" });
+                _context.TicketItems.Add(new TicketItem { Concert = "Pantera" });
                 _context.SaveChanges();
             }
         }
